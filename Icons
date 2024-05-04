@@ -1,0 +1,67 @@
+import { Box, Button, Container, Flex, Grid, GridItem, Heading, Image, Input, Link, Select, Text, VStack } from "@chakra-ui/react";
+import { FaPlus, FaUser } from "react-icons/fa";
+
+const Index = () => {
+  return (
+    <Container maxW="container.xl" p={4}>
+      <Heading as="h1" size="xl" mb={4}>
+        Game Theory Experiment Platform
+      </Heading>
+      <Grid templateColumns="repeat(2, 1fr)" gap={4}>
+        <GridItem>
+          <VStack align="stretch" spacing={4}>
+            <Heading as="h2" size="lg">
+              Create Experiment
+            </Heading>
+            <Input placeholder="Experiment Name" />
+            <Select placeholder="Select Game Type">
+              <option value="prisonerDilemma">Prisoner's Dilemma</option>
+              <option value="ultimatumGame">Ultimatum Game</option>
+              <option value="dictatorGame">Dictator Game</option>
+            </Select>
+            <Button colorScheme="teal" leftIcon={<FaPlus />}>
+              Create Experiment
+            </Button>
+          </VStack>
+        </GridItem>
+        <GridItem>
+          <VStack align="stretch" spacing={4}>
+            <Heading as="h2" size="lg">
+              Join Experiment
+            </Heading>
+            <Input placeholder="Experiment ID" />
+            <Button colorScheme="teal" leftIcon={<FaUser />}>
+              Join Experiment
+            </Button>
+          </VStack>
+        </GridItem>
+      </Grid>
+      <Box mt={4}>
+        <Heading as="h2" size="lg">
+          Active Experiments
+        </Heading>
+        <Grid templateColumns="repeat(2, 1fr)" gap={4}>
+          <GridItem>
+            <Link href="#" _hover={{ textDecoration: "underline" }}>
+              Experiment 1
+            </Link>
+          </GridItem>
+          <GridItem>
+            <Link href="#" _hover={{ textDecoration: "underline" }}>
+              Experiment 2
+            </Link>
+          </GridItem>
+        </Grid>
+      </Box>
+      <Box mt={4}>
+        <Heading as="h2" size="lg">
+          About
+        </Heading>
+        <Text>This platform is designed to facilitate game theory experiments on humans. Participants can join existing experiments or create their own.</Text>
+        <Image src="https://images.unsplash.com/photo-1618808338062-a8273cf5bbd1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxnYW1lJTIwdGhlb3J5fGVufDB8fHx8MTcxNDg0NDg0N3ww&ixlib=rb-4.0.3&q=80&w=1080" />
+      </Box>
+    </Container>
+  );
+};
+
+export default Index;
